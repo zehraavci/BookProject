@@ -9,9 +9,12 @@ using BookProject.Data;
 using BookProject.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookProject.Controllers
 {
+    [Authorize(Policy = "readpolicy")]
+
     public class SlidersController : Controller
     {
         private readonly ApplicationDbContext _context;

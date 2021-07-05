@@ -11,7 +11,8 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace BookProject.Views.Categories
 {
-    [Authorize]
+    [Authorize(Policy = "readpolicy")]
+
     public class CategoriesController : Controller
     {
         private readonly ApplicationDbContext _context;

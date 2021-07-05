@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace BookProject.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "readpolicy")]
     public class AuthorsController : Controller
     {
         private readonly ApplicationDbContext _context;

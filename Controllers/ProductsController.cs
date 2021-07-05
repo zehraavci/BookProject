@@ -14,7 +14,7 @@ using System.Net;
 
 namespace BookProject.Views.Products
 {
-    [Authorize]
+    [Authorize(Policy = "readpolicy")]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;

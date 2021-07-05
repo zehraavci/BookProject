@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BookProject.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "readpolicy")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookProject.Data;
 using BookProject.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookProject.Controllers
 {
+    [Authorize(Policy = "readpolicy")]
     public class PublishersController : Controller
     {
         private readonly ApplicationDbContext _context;

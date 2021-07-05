@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using BookProject.Data;
 using BookProject.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookProject.Controllers
 {
+    [Authorize(Policy = "readpolicy")]
     public class CommentsController : Controller
     {
         private readonly ApplicationDbContext _context;
