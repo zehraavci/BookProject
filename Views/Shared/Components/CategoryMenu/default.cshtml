@@ -1,0 +1,10 @@
+﻿@model IEnumerable<BookProject.Models.Category>
+@if (Model.Any())
+{
+            @foreach (var item in Model)
+             {
+                <li class="nav-item text-wrap">
+                    <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index" asp-route-CategoryId="@item.Id">@item.Name</a>
+                </li>
+             }
+        }

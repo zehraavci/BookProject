@@ -1,0 +1,84 @@
+﻿@model BookProject.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Kitap Detay</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Kitap Adı
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            Açıklama
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            Kitap Kodu
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+        <dt class="col-sm-2">
+            Fiyat
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            ISBN
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Isbn)
+        </dd>
+        <dt class="col-sm-2">
+            Sıra Numarası
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sort)
+        </dd>
+        <dt class="col-sm-2">
+            Stok Adedi
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Qty)
+        </dd>
+
+        <dt class="col-sm-2">
+            Kategori
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Yazar
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author.Fullname)
+        </dd>
+        <dt class="col-sm-2">
+            Yayıncı
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Publisher.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Görsel
+        </dt>
+        <dd class="col-sm-10">
+            <img class="img-thumbnail" src="~/Image/@Html.DisplayFor(model => model.Image)" alt="@Html.DisplayFor(model => model.Title)" />
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Düzenle</a> |
+    <a asp-action="Index">Listeye Dön</a>
+</div>
